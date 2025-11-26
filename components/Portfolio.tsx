@@ -15,13 +15,14 @@ interface Project {
 }
 
 const Portfolio: React.FC<PortfolioProps> = ({ text, lang }) => {
+  const API_BASE = (import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:3001';
   const [items, setItems] = useState<Project[]>(text.items);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/projects');
+        const response = await fetch(`${API_BASE}/api/projects`);
         if (response.ok) {
           const data = await response.json();
           if (Array.isArray(data) && data.length > 0) {

@@ -7,6 +7,7 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ text }) => {
+  const API_BASE = (import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:3001';
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,7 +26,7 @@ const Contact: React.FC<ContactProps> = ({ text }) => {
 
     try {
       // Connects to the backend server (Assuming it's running on port 3001)
-      const response = await fetch('http://localhost:3001/api/contact', {
+      const response = await fetch(`${API_BASE}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

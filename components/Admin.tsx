@@ -9,6 +9,7 @@ interface Project {
 }
 
 const Admin: React.FC = () => {
+  const API_BASE = (import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:3001';
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -31,7 +32,7 @@ const Admin: React.FC = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch('http://localhost:3001/api/projects');
+      const res = await fetch(`${API_BASE}/api/projects`);
       if (res.ok) {
         const data = await res.json();
         setProjects(data);
@@ -44,7 +45,7 @@ const Admin: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:3001/api/login', {
+      const res = await fetch(`${API_BASE}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -71,7 +72,7 @@ const Admin: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3001/api/projects', {
+      const res = await fetch(`${API_BASE}/api/projects`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title: newTitle, category: newCategory, image: newImage })
@@ -92,7 +93,7 @@ const Admin: React.FC = () => {
   const handleDeleteProject = async (id: number) => {
     if (!window.confirm('Are you sure you want to delete this project?')) return;
     try {
-      const res = await fetch(`http://localhost:3001/api/projects/${id}`, {
+      const res = await fetch(`${API_BASE}/api/projects/${id}`, {
         method: 'DELETE'
       });
       if (res.ok) {

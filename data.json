@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Modern Residential Complex",
+      "category": "Construction",
+      "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": 2,
+      "title": "Highway Paving",
+      "category": "Infrastructure",
+      "image": "https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=2069&auto=format&fit=crop"
+    },
+    {
+      "id": 3,
+      "title": "Commercial Tower",
+      "category": "Real Estate",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": 4,
+      "title": "Infrastructure Project",
+      "category": "Excavation",
+      "image": "https://images.unsplash.com/photo-1590644365607-1c5a29846519?q=80&w=2071&auto=format&fit=crop"
+    },
+    {
+      "id": 1764149175209,
+      "title": "suhaib taklas",
+      "category": "real estate",
+      "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": 1764163587703,
+      "title": "islam modren",
+      "category": "real estate",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+    }
+  ]
+}
